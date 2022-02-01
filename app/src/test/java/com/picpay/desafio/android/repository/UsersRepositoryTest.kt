@@ -6,7 +6,6 @@ import com.picpay.desafio.android.domain.model.User
 import io.mockk.MockKAnnotations
 import io.mockk.every
 import io.mockk.impl.annotations.MockK
-import junit.framework.Assert.assertEquals
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.runBlocking
@@ -34,7 +33,7 @@ class UsersRepositoryTest {
         }
         every { dataSource.getUsers() } answers { flow }
         val result = repository.getUsers()
-        assertEquals(result.first()[0].id, 42)
+        assert(result.first()[0].id == 42)
     }
     private fun mockResponse() = listOf(
         User("","name",42,"username")
