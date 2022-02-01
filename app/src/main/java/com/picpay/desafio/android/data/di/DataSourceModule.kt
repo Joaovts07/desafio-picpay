@@ -2,6 +2,7 @@ package com.picpay.desafio.android.data.di
 
 import com.picpay.desafio.android.data.datasource.ApiUsersDataSource
 import com.picpay.desafio.android.data.datasource.UsersDataSource
+import com.picpay.desafio.android.data.db.AppDataBase
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

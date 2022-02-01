@@ -3,6 +3,7 @@ package com.picpay.desafio.android.data.di
 import android.content.Context
 import androidx.room.Room
 import com.picpay.desafio.android.data.db.AppDataBase
+import com.picpay.desafio.android.data.db.dao.UsersDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -26,5 +27,7 @@ object DataBaseModule {
 
     @Singleton
     @Provides
-    fun provideUsersDao(dataBase: AppDataBase) = dataBase.usersDao()
+    fun provideUsersDao(dataBase: AppDataBase) : UsersDao{
+      return dataBase.usersDao()
+    }
 }
