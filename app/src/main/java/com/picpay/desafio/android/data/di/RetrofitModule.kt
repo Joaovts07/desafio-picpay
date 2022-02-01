@@ -1,5 +1,6 @@
 package com.picpay.desafio.android.data.di
 
+import com.picpay.desafio.android.BuildConfig
 import com.picpay.desafio.android.PicPayService
 import dagger.Module
 import dagger.Provides
@@ -18,7 +19,7 @@ object RetrofitModule {
     @Provides
     fun provideRetrofit(): PicPayService {
         return Retrofit.Builder()
-            .baseUrl("https://609a908e0f5a13001721b74e.mockapi.io/picpay/api/")
+            .baseUrl(BuildConfig.SERVER_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(PicPayService::class.java)
